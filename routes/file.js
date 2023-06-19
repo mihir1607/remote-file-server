@@ -19,9 +19,9 @@ router.post("/uploadfile", async (req, res, next) => {
 
 router.get("/downloadfile", async (req, res, next) => {
     console.log("download file called");
-    const fileName = 'test.txt';
+    const fileName = 'video.mp4';
     const filePath = `./${fileName}`;
-    const byteArray = await retrieveFile(fileName);
+    const byteArray = await retrieveFile(filePath);
     const postData = {
         fileName: fileName,
         byteArray: byteArray
