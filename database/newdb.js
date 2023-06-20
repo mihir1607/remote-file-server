@@ -21,7 +21,7 @@ const createDB = async (dbname, tableName) => {
             if (err) throw err;
             console.log(`Using database ${dbname}`);
         });
-        const createTableQuery = `CREATE TABLE IF NOT EXISTS cfrooms (EVENTID VARCHAR(255) NOT NULL PRIMARY KEY, PASSKEY VARCHAR(255) NOT NULL, IS_ACTIVE BOOLEAN NOT NULL DEFAULT 0, FILELOCATION VARCHAR(255))`;
+        const createTableQuery = `CREATE TABLE IF NOT EXISTS cfrooms (EVENTID VARCHAR(255) NOT NULL PRIMARY KEY, PASSKEY VARCHAR(255) NOT NULL, IS_ACTIVE BOOLEAN NOT NULL DEFAULT 0, FILELOCATION VARCHAR(255), X INT, Y INT, Z INT)`;
         con.query(createTableQuery, (err, result) => {
             if (err) throw err;
             console.log(`Table ${tableName} created`);
